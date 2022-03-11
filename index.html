@@ -1,17 +1,109 @@
-<!DOCTYPE html PÚBLICO "-//W3C//DTD XHTML 1.0 Strict//EN" 
-       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" >
-      < html > 
-       < head >  
-         < script  src = "https://www.wiris.net/demo/editor/editor" > </ script > 
-         < script > var editor;
-         ventana .onload = función (
-         ) {
-           editor = com.wiris.jsEditor.JsEditor.newInstance({ 'idioma' : 'en' });
-                 editor.insertInto( documento .getElementById( 'editorContainer' ));
-         }
-         </ script > 
-       </ head > 
-       < cuerpo > 
-         < div  id = "editorContainer" > </ div > 
-       </ cuerpo > 
-     </ html >
+<html lang=en-US>
+<head>
+	<link rel= "stylesheet" href= "style.css" >
+	<meta charset=UTF-8>
+		<title>AsciiMath </title>
+	
+		<script type = 'text / javascript' src = 'http: //mathdox.org/formulaeditor/main.js'> </script>
+	<script>
+		MathJax = {
+			"fast-preview": {
+       					disabled: true
+				},
+				
+				AuthorInit: function() {
+					MathJax.Hub.Register.StartupHook('End', function() {
+						MathJax.Hub.processSectionDelay = 5
+						var demoSource = document.getElementById('demoSource')
+						var demoRendering = document.getElementById('demoRendering')
+						var math = MathJax.Hub.getAllJax('demoRendering')[0]
+						demoSource.addEventListener('input', function() {
+							MathJax.Hub.Queue(['Text', math, demoSource.value])
+						})
+					})
+				}
+			}
+	</script>
+	<script async
+	src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML-full">
+	</script>
+<style>
+	frame {
+	  max-width: 40em;
+	  margin: auto;
+	}
+	#demoSource{
+	  
+	border: 1px solid rgb(228, 105, 105);
+	  margin-top: 5.75em;
+	  margin-bottom: 0.50em;
+	  width: 50%;
+	  font-size: 120%;
+	  margin-left: 5px;
+	  text-align:unset ;
+	  box-sizing:inherit;
+	}
+	#demoRendering {
+	  font-size: 120%;
+	  margin-top: .75em;
+	  border: 2px solid rgb(52, 16, 138);
+	  width: 47.5%;
+	  padding: .75em;
+      min-height: 2em;
+	  margin-left: 5px;
+	  text-align-last: left;
+	  
+  	}
+  
+	nav {
+	  margin-left: 150px;
+	}
+	.left {
+	  float: left;
+	}
+	.right {
+	  float: right;
+	}
+	</style>
+</head>
+
+<body>
+	
+<nav> 
+	<h1>AsciiMath</h1>
+
+	<div id="links">
+		<a href="#about">About</a>
+		<a href="#gettingStarted">getting started</a>
+		<a href="#syntax">syntax</a>
+	</div>
+</nav>
+
+
+<section id="about">
+	<h2>About</h2>
+
+	<p>AsciiMath is an easy-to-write markup language for mathematics.<br>
+		Try it out in the interactive renderer:</p>
+
+	
+
+	<div class="rightColumn">
+		<label for="demoRendering">Rendering:</label>
+		<br/>
+				
+	<div class='mathdoxformula' id="demoRendering">`sum_(i=1)^n i^3=((n(n+1))/2)^2`</textarea>		
+	</div>
+	</div>
+
+	<div class="leftColumn">
+		
+		<textarea class="ioArea" id="demoSource">{:(),():}</textarea><br/>
+		<label for="demoSource">Input:</label>
+		<br/>
+	</div>
+ 
+</section>
+
+</body>
+</html>
