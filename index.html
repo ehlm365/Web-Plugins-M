@@ -3,7 +3,7 @@
 	<link rel= "stylesheet" href= "style.css" >
 	<meta charset=UTF-8>
 		<title>AsciiMath </title>
-	
+	<script src="https://cdn.ckeditor.com/4.17.2/standard/ckeditor.js"></script>
 		<script type = 'text / javascript' src = 'http: //mathdox.org/formulaeditor/main.js'> </script>
 	<script>
 		MathJax = {
@@ -104,6 +104,9 @@
 	</div>
  
 </section>
-
+ <textarea name="editor1"></textarea>
+                <script>
+                        CKEDITOR.replace( 'editor1' );
+                </script>
 </body>
 </html>
