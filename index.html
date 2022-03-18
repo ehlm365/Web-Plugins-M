@@ -1,3 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Editor onLine</title>
+  <!-- <link rel="stylesheet" href="style_editor.css"> -->
+    <script src="http://www.wiris.net/demo/editor/editor"></script>
+  <script>
+  var editor;
+    window.onload = function () {
+      editor = com.wiris.jsEditor.JsEditor.newInstance({
+      'language': 'es'
+      });
+    editor.insertInto(document.getElementById('editorContainer'));
+    }
+  function doSet() {
+      editor.setMathML("<math><mfrac><mn>1</mn><mi>x</mi></mfrac></math>");
+    }
+  function doGet() {
+      alert(editor.getMathML());
+    }
+    </script>
+  </head>
+  <body>
+  <center>
+	  <div style="width: 580px; height:460px" id="editorContainer"></div>
+  
+	  </center>
+</body>
+</html>
+
 <html lang=en-US>
 <head>
 	<link rel= "stylesheet" href= "style.css" >
@@ -75,7 +106,7 @@
                         CKEDITOR.replace( 'editor1' );
                 </script>
 	 <script>
-	CKEDITOR.plugins.addExternal( 'asciimath', 'C:\xampp\htdocs\aula2\main\inc\lib\javascript\ckeditor\plugins\asciimath', 'plugin.js' );
+	CKEDITOR.plugins.addExternal( 'asciimath', '/C:/xampp/htdocs/aula2/main/inc/lib/javascript/ckeditor/plugins/asciimath', 'plugin.js' );
 	</script>
  <script>
 // extraPlugins needs to be set too.
