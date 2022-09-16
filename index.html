@@ -1,37 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>A Simple Page with CKEditor 4</title>
-        <!-- Make sure the path to CKEditor is correct. -->
-        <script src="ckeditor.js"></script>
-       <script> CKEDITOR.plugins.addExternal('ckeditor_wiris', '/node_modules/@wiris/mathtype-ckeditor4/', 'plugin.js');</script>
-    
-    
-    
-    </head>
-    <body>
-        <form>
-            <textarea name="editor1" id="editor1" rows="100" cols="80">
-                
-            </textarea>
-            <script>
-                // Replace the <textarea id="editor1"> with a CKEditor 4
-                // instance, using default configuration.
-                CKEDITOR.replace( 'editor1' );
-            </script>
-        </form>
-    </body>
-</html>
 
 <html lang=en-US>
 <head>
 	<link rel= "stylesheet" href= "style.css" >
 	<meta charset=UTF-8>
 		<title>AsciiMath </title>
-	<script src="https://cdn.ckeditor.com/4.17.2/standard/ckeditor.js"></script>
-		<script type = 'text / javascript' src = 'http: //mathdox.org/formulaeditor/main.js'> </script>
-	<script>
+			
 		MathJax = {
 			"fast-preview": {
        					disabled: true
@@ -94,31 +67,11 @@
 </head>
 
 <body>
-	</section>
-
-	 <textarea name="editor1"></textarea>
-                <script>
-                        CKEDITOR.replace( 'editor1' );
-                </script>
-	 <script>
-	CKEDITOR.plugins.addExternal( 'asciimath', '/C:/xampp/htdocs/aula2/main/inc/lib/javascript/ckeditor/plugins/asciimath', 'plugin.js' );
-	</script>
- <script>
-// extraPlugins needs to be set too.
-CKEDITOR.replace( 'editor1', {
-        extraPlugins: 'asciimath'
-} );
-	
-	</script>
-
+		
 <nav> 
 	<h1>AsciiMath</h1>
 
-	<div id="links">
-		<a href="#about">About</a>
-		<a href="#gettingStarted">getting started</a>
-		<a href="#syntax">syntax</a>
-	</div>
+	
 </nav>
 
 
